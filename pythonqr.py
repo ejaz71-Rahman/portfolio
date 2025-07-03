@@ -13,4 +13,4 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 img.save("redoyportfolio.png")
 
-print(" The file was saved 'advanced.png'")
+print(" The file was saved 'redoyportfolio.png'")
