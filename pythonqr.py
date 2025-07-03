@@ -1,15 +1,16 @@
 import qrcode
 
-qr = qrcode.QRCode(box_size=20)
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_L,
+    box_size=10,
+    border=4
+)
 
-url = input("Enter URL: ") or "https://github.com/ejaz71-Rahman/portfolio"
+qr.add_data("https://github.com/ejaz71-Rahman/portfolio")
+qr.make(fit=True)
 
-# Use 'qrcode.png' if input is empty (falsy)
+img = qr.make_image(fill_color="black", back_color="white")
+img.save("redoyportfolio.png")
 
-filename = input("Save as: ") or "qrcode.png"
-
-img = qrcode.make(url)
-img.save(filename)
-
-print(f"✅ QR code saved as {filename}")
-
+print(" The file was saved 'advanced.png'")
